@@ -7,6 +7,7 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { CreateTuit } from './dto';
 import { TuitsService } from './tuits.service';
 
 @Controller('tuits')
@@ -23,7 +24,7 @@ export class TuitsController {
   }
 
   @Post()
-  postTuit(@Body('message') message: string) {
+  postTuit(@Body() message: CreateTuit) {
     return this.wsTuit.postTuit(message);
   }
 

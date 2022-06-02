@@ -3,7 +3,7 @@ GET {{URL}}/tuits/
 
 
 ###Listado de tuits
-GET {{URL}}/tuits/2
+GET {{URL}}/tuits/200
 
 ###Postear un tuit
 POST {{URL}}/tuits/
