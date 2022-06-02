@@ -1,0 +1,28 @@
+###Listado de tuits
+GET {{URL}}/tuits/
+
+
+###Listado de tuits
+GET {{URL}}/tuits/2
+
+###Postear un tuit
+POST {{URL}}/tuits/
+Content-Type: application/json
+
+{
+    "message": "Hola mundo"
+}
+
+
+###Postear un tuit
+PATCH {{URL}}/tuits/2
+Content-Type: application/json
+
+{
+    "message": "Chao mundo"
+}
+
+
+###Eliminar un tuit
+DELETE {{URL}}/tuits/2
+Content-Type: application/json
