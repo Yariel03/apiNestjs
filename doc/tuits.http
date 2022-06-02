@@ -1,21 +1,21 @@
-###Listado de tuits
+###Listado de todos los tuits
 GET {{URL}}/tuits/
 
 
-###Listado de tuits
-GET {{URL}}/tuits/2
+###Listado de un tuits por codigo
+GET {{URL}}/tuits/3
 
 ###Postear un tuit
-POST {{URL}}/tuits/
+POST {{URL}}/tuits
 Content-Type: application/json
 
 {
-    "message": "Hola mundo"
+    "message": "Como estan?"
 }
 
 
-###Postear un tuit
-PATCH {{URL}}/tuits/2
+###|Modificar un tuit
+PATCH {{URL}}/tuits/1
 Content-Type: application/json
 
 {

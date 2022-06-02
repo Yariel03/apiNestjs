@@ -7,7 +7,9 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { CreateTuit } from './dto';
 import { TuitsService } from './tuits.service';
+import { UpdateTuit } from './dto/update-tuit.dto';
 
 @Controller('tuits')
 export class TuitsController {
@@ -18,22 +20,22 @@ export class TuitsController {
   }
 
   @Get(':id')
-  getTuit(@Param('id') id) {
-    return this.wsTuit.getTuit(id);
+  getTuit(@Param('id') id: number) {
+    return this.wsTuit.getTuit(Number(id));
   }
 
   @Post()
-  postTuit(@Body('message') message: string) {
+  postTuit(@Body() message: CreateTuit) {
     return this.wsTuit.postTuit(message);
   }
 
   @Patch(':id')
-  updateTuit(@Param('id') id: string, @Body('message') message: any) {
-    return this.wsTuit.updateTuit(id, message);
+  updateTuit(@Param('id') id: number, @Body() message: UpdateTuit) {
+    return this.wsTuit.updateTuit(Number(id), message);
   }
 
   @Delete(':id')
-  removeTuit(@Param('id') id: string) {
-    return this.wsTuit.deleteTuit(id);
+  removeTuit(@Param('id') id: number) {
+    return this.wsTuit.deleteTuit(Number(id));
   }
 }
